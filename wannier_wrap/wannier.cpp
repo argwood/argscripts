@@ -89,7 +89,7 @@ void wannier(vector<Snapshot> &traj, struct Params params) {
 	int Cl_E_count;
 	int In_E_count;
 	int Zn_E_count;
-	int Te_E_count;
+	int P_E_count;
 	
 	for (int snap = 0; snap < traj.size(); snap++) {
 		vector<int> assigned;						// a vector that collects indices for all "assigned" wannier functions
@@ -198,14 +198,14 @@ void wannier(vector<Snapshot> &traj, struct Params params) {
 					cout << "Overcoordinated Zn!" << endl;
 				}
 			}
-			else if (traj[snap].names[i] == "Te") {
-				Te_E_count = count_wannier(traj, params, snap, i, assigned);
-				if (Te_E_count < params.nw_Te) {
-					cout << "Undercoordinated Te! Only " << Te_E_count << " Wannier Centers"  << endl;
+			else if (traj[snap].names[i] == "P") {
+				P_E_count = count_wannier(traj, params, snap, i, assigned);
+				if (P_E_count < params.nw_P) {
+					cout << "Undercoordinated P! Only " << P_E_count << " Wannier Centers"  << endl;
 					undercoordinated.push_back(i);
 				}
-				else if (Te_E_count > params.nw_Te) {
-					cout << "Overcoordinated Te!" << endl;
+				else if (P_E_count > params.nw_P) {
+					cout << "Overcoordinated P!" << endl;
 				}
 			}
 

@@ -39,7 +39,7 @@ struct Params {
 	int n_Cl;					//number of Cl atoms
 	int n_In;					//number of In atoms
 	int n_Zn;					//number of Zn atoms
-	int n_Te;					//number of Te atoms
+	int n_P;					//number of Te atoms
 
 	int n_W;					//number of Wannier centers
 	const int nw_S = 4;			//number of expected wannier centers around each atom type
@@ -52,7 +52,7 @@ struct Params {
 	const int nw_Cl = 4;
 	const int nw_In = 10;
 	const int nw_Zn = 9;
-	const int nw_Te = 4;     // this one's going to be either 4 or 9 depending on your pseudopotential valence
+	const int nw_P = 4;     
 
 	/* Below are parameters that you might need to adjust for your system~ */
 	

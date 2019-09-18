@@ -18,7 +18,7 @@ void read_xyz(struct Params &params, vector<Snapshot> &traj, string input) {
 	int n_Cl_ = 0;
 	int n_In_ = 0;
 	int n_Zn_ = 0;
-	int n_Te_ = 0;
+	int n_P_ = 0;
 	int n_W_ = 0;
 	int n_atoms_NP_;
 
@@ -105,8 +105,8 @@ void read_xyz(struct Params &params, vector<Snapshot> &traj, string input) {
 		else if (traj[0].names[i] == "Zn") {
 			n_Zn_ ++;
 		}
-		else if (traj[0].names[i] == "Te") {
-			n_Te_ ++;
+		else if (traj[0].names[i] == "P") {
+			n_P_ ++;
 		}
 		else if (traj[0].names[i] == "E") {
 			n_W_ ++;
@@ -123,9 +123,9 @@ void read_xyz(struct Params &params, vector<Snapshot> &traj, string input) {
 	params.n_Cl = n_Cl_;
 	params.n_In = n_In_;
 	params.n_Zn = n_Zn_;
-	params.n_Te = n_Te_;
+	params.n_P = n_P_;
 	params.n_W = n_W_;
-	n_atoms_NP_ = n_Pb_ + n_S_ + n_I_ + n_Cd_ + n_Se_ + n_H_ + n_O_ + n_Cl_ + n_In_ + n_Zn_ + n_Te_ ;
+	n_atoms_NP_ = n_Pb_ + n_S_ + n_I_ + n_Cd_ + n_Se_ + n_H_ + n_O_ + n_Cl_ + n_In_ + n_Zn_ + n_P_ ;
 	params.n_atoms_NP = n_atoms_NP_;
 	infile.close();
 }
